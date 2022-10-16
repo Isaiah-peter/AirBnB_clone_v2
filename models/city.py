@@ -8,7 +8,6 @@ from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
 
-
 class City(BaseModel, Base):
     """ The city class, contains state ID and name """
     __tablename__ = 'cities'
@@ -18,4 +17,3 @@ class City(BaseModel, Base):
     if getenv("HBNB_TYPE_STORAGE") == "db":
         places = relationship("Place", backref="city",
                               cascade="all, delete-orphan")
-
