@@ -27,7 +27,7 @@ class DBStorage:
         host = os.getenv("HBNB_MYSQL_HOST")
         db = os.getenv("HBNB_MYSQL_DB")
         self.__engine = create_engine(
-            f"mysql+mysqldb://{user}:{password}@{host}/{db}", 
+            f"mysql+mysqldb://{user}:{password}@{host}/{db}",
             pool_pre_ping=True)
 
         if os.getenv("HBNB_ENV") == "test":
@@ -35,7 +35,7 @@ class DBStorage:
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
-        if cls != None:
+        if cls is not None:
             objects = self.__session.query(cls).all()
         else:
             c = [City, Amenity, User, State, Place, Review]
@@ -55,7 +55,7 @@ class DBStorage:
 
     def delete(self, obj=None):
         """remove new object from session"""
-        if obj != None:
+        if obj is not None:
             self.__session.delete(obj)
 
     def reload(self):
