@@ -41,8 +41,11 @@ class Place(BaseModel, Base):
         @property
         def reviews(self):
             """ Gets a list of all cities in state """
-            return [reviews for reviews in models.storage.all(Review).values() if
-                    self.id == reviews.place_id]
+            review_list = []
+            for review in list(models.storage.all(Review).values()):
+                if review.place_id == self.id:
+                    review_list.append(review)
+            return review_list
 
         @property
         def amenities(self):
