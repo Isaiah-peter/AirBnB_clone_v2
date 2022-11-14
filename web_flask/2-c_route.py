@@ -24,7 +24,7 @@ def cis_fun(text):
     """cis_fun"""
     s = text
     s = s.replace("_", " ")
-    return f"C {s}"
+    return "C {}".format(s)
 
 
 if __name__ == "__main__":
