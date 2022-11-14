@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 """
 Write a script that starts a Flask web application
 """
@@ -24,6 +23,20 @@ def cis_fun(text):
     s = text
     s = s.replace("_", " ")
     return "C {}".format(s)
+
+
+@app.route("/python", strict_slashes=False)
+def py():
+    """cis_fun"""
+    return "Python is cool"
+
+
+@app.route("/python/<text>", strict_slashes=False)
+def py(text):
+    """cis_fun"""
+    s = text
+    s = s.replace("_", " ")
+    return "Python {}".format(s)
 
 
 if __name__ == "__main__":
