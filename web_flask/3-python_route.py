@@ -33,7 +33,7 @@ def py():
 
 
 @app.route("/python/<text>", strict_slashes=False)
-def py(text):
+def py1(text):
     """cis_fun"""
     s = text
     s = s.replace("_", " ")
