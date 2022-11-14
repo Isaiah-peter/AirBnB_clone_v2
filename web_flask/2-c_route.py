@@ -4,7 +4,6 @@ Write a script that starts a Flask web application
 """
 
 from flask import Flask
-from markupsafe import escape
 app = Flask(__name__)
 
 
@@ -23,7 +22,7 @@ def hbnb():
 @app.route("/c/<text>", strict_slashes=False)
 def cis_fun(text):
     """hbnb"""
-    s = escape(text)
+    s = text
     s = s.replace("_", " ")
     return f"C {s}"
 
