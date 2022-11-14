@@ -21,7 +21,7 @@ def hbnb():
 
 @app.route("/c/<text>", strict_slashes=False)
 def cis_fun(text):
-    """hbnb"""
+    """cis_fun"""
     s = text
     s = s.replace("_", " ")
     return f"C {s}"
